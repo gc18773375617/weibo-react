@@ -1,12 +1,13 @@
 import React from 'react';
 import Head from './dom/head'
 import Router from './router'
+import {BrowserRouter as Route} from 'react-router-dom'
 function App() {
   return (
-    <div>
+    <Route>
       <Head/>
       <Router/>
-    </div>
+    </Route>
   );
 }
 

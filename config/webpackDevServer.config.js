@@ -81,10 +81,12 @@ module.exports = function(proxy, allowedHost) {
       disableDotRule: true,
     },
     public: allowedHost,
-    proxy:{
-      '/weibo/':{
-        target:'https://m.weibo.cn/',
-        changeOrigin:true
+    proxy: {
+      '/api': {
+        target: 'https://m.weibo.cn/api',
+        pathRewrite: { '^/api': '' },
+        changeOrigin: true,
+        secure: false, // 接受 运行在 https 上的服务
       }
     },
     before(app, server) {

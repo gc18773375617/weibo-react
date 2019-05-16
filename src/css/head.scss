@@ -1,3 +1,4 @@
+$border-color:rgb(171,178,185);
 .head-box{
     width: 100%;
     height: 5.25rem;
@@ -18,7 +19,136 @@
     border-style: solid;
     font-size: 1rem;
     z-index: 995;
+    .bigItem{
+        position: absolute;
+        top: 5.25rem;
+        left: 0;
+        right: 0;
+        text-align: left;
+        padding: 0 .5rem 1.125rem;
+        color: #333;
+        background-color: #fafafa;
+        z-index: 2;
+        transition: all 0.5s;
+        display: none;
+        &_show{
+            display: block;
+        }
+        >ul{
+            width: 100%;
+            overflow: hidden;
+            >li{
+                display: inline-block;
+                margin-top: 0.5rem;
+                padding: 0 .5rem;
+                width:25%;
+                margin-left: -.25rem;
+                text-align: center;
+                vertical-align: top;
+                font-size: .875rem;
+                >span{
+                    display: inline-block;
+                    width: 100%;
+                    height: 2.125rem;
+                    line-height: 2.125rem;
+                    padding: 0 .25rem;
+                    vertical-align: middle;
+                    background-color: #eee;
+                    border-radius: 3px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+            >.item_sel{
+                color: #ff8200;
+            }
+        }
+    }
     .head-top{
-        
+        .head-logo{
+            position: absolute;
+            left: .75rem;
+            width: 1.625rem;
+            height: 2.5rem;
+            background-image: url(../img/logo.svg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-position: 0 .75rem;
+        }
+    }
+    .head-item{
+        display: flex;
+        width: 100%;
+        height: 2.75rem;
+        position: absolute;
+        top: 2.5rem;
+        color: #a5adb5;
+        >.item-box{
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            >ul{
+                display: flex;
+                flex-direction: row;
+                overflow: hidden;
+                overflow-x: auto;
+                &:before{
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: .1875rem;
+                    width: .75rem;
+                    z-index: 9;
+                    background: linear-gradient(90deg,#fafafa 0,#fafafa 50%,hsla(0,0%,98%,0));
+
+                }
+                >li{
+                display: block; 
+                margin: 0 .75rem;
+                white-space: nowrap;
+                line-height: 2.75rem;
+                }
+                .cur{
+                    color: #000;
+                }
+            }
+        }
+        >.item-button{
+            width: 2.6875rem;
+            position: relative;
+            &:before{
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: .1875rem;
+                left: 1px;
+                z-index: 9;
+                width: .75rem;
+                -webkit-transform: translateX(-100%);
+                transform: translateX(-100%);
+                background: -webkit-gradient(linear,right top,left top,from(#fafafa),color-stop(20%,#fafafa),to(hsla(0,0%,98%,0)));
+                background: linear-gradient(270deg,#fafafa 0,#fafafa 20%,hsla(0,0%,98%,0));
+            }
+            >div{
+                position: absolute;
+                width: 0.5rem;
+                height: 0.5rem;
+                left: 50%;
+                top: 50%;
+                margin-top: -0.4rem;
+                margin-left: -0.25rem;
+                border-left: 1px solid $border-color;
+                border-bottom: 1px solid $border-color;
+                transform: rotate(-45deg);
+                transition: all 0.5s;
+                transform-origin: center .36rem;
+            }
+            >.item-button_cli{
+                transform: rotate(135deg);
+            }
+
+        }
     }
 }
