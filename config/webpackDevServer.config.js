@@ -82,7 +82,7 @@ module.exports = function(proxy, allowedHost) {
     },
     public: allowedHost,
     proxy: {
-      '/api': {
+      '/api/*': {
         target: 'https://m.weibo.cn/api',
         pathRewrite: { '^/api': '' },
         changeOrigin: true,
