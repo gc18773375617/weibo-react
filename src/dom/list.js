@@ -103,7 +103,6 @@ class List extends Component{
     render(){
         let list = this.state.weiboList;
         list = list.map((vo,i)=>{
-            let pic_dom = '';
             let pic_list = '';
             if(vo.mblog.pics !== undefined){
                 let pic_dom = vo.mblog.pics
