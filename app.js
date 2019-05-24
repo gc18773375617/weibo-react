@@ -23,12 +23,12 @@ app.get('*', (req, res) => {
 })
  
 //监听端口
-app.listen(80, (err) => {
+app.listen(78, (err) => {
   if (err) {
     console.log(err);
     return null;
   }
  
-  return console.log('8080 port starting');
+  return console.log('78 port starting');
 })
 
